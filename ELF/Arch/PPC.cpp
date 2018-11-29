@@ -66,6 +66,9 @@ void PPC::relocateOne(uint8_t *Loc, RelType Type, uint64_t Val) const {
   case R_PPC_REL24:
     write32be(Loc, read32be(Loc) | (Val & 0x3FFFFFC));
     break;
+  case R_PPC_EMB_SDA21:
+    error(getErrorLocation(Loc) + "unimplemented reloc R_PPC_EMB_SDA21");
+    break;
   default:
     error(getErrorLocation(Loc) + "unrecognized reloc " + Twine(Type));
   }
