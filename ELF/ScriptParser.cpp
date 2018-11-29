@@ -391,6 +391,8 @@ std::pair<ELFKind, uint16_t> ScriptParser::readBfdName() {
     return {ELF32LEKind, EM_IAMCU};
   if (S == "elf32-littlearm")
     return {ELF32LEKind, EM_ARM};
+  if (S == "elf32-powerpc")
+    return {ELF32BEKind, EM_PPC};
   if (S == "elf32-x86-64")
     return {ELF32LEKind, EM_X86_64};
   if (S == "elf64-littleaarch64")
